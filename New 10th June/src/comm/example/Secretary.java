@@ -26,7 +26,7 @@ private String Designation;
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Manager [Designation=" + Designation + ", toString()=" + super.toString()+ "]";
+		return "Secretary [Designation=" + Designation + ", toString()=" + super.toString()+ "]";
 	}
 	
 
