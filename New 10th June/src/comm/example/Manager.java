@@ -9,9 +9,9 @@ public class Manager extends Employee{
 		super();
 	}
 	
-	public Manager(Integer EmployeeID, String FirstName, String LastName, String email, String DepartmentName)
+	public Manager(Integer EmployeeID, String FirstName, String LastName, String email, EmployeeType employeeType, String DepartmentName)
 	{
-		super(EmployeeID, FirstName, LastName, email);
+		super(EmployeeID, FirstName, LastName, email, employeeType);
 		this.DepartmentName=DepartmentName;
 	}
 
