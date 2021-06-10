@@ -8,11 +8,10 @@ public class EBook extends Book {
 	
 	
 	
-	public Ebook() {
+	public EBook() {
 		super();
 	}
-	
-	public Ebook(String downloadSite, double sizeMB) {
+	public EBook(String downloadSite, double sizeMB) {
 		super();
 		this.downloadSite = downloadSite;
 		this.sizeMB = sizeMB;
