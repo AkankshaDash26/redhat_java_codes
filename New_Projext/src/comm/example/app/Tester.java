@@ -1,22 +1,21 @@
 package comm.example.app;
 
-import java.util.Scanner;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.UUID;
 
-import comm.example.PriorityComparator;
 import comm.example.Desccomparator;
+import comm.example.PriorityComparator;
 import comm.example.Todo;
 
 public class Tester {
-	private static Scanner scanner=new Scanner(System.in);
-	
+	private static Scanner scanner = new Scanner(System.in);
+
 	public static void main(String[] args) {
-		
 		Desccomparator desccomparator = new Desccomparator();
 		PriorityComparator priorityComparator = new PriorityComparator();
 		Set<Todo> set = new TreeSet<Todo>(priorityComparator);
@@ -49,10 +48,7 @@ public class Tester {
 			}
 		}
 		for (Todo t : set) {
-			System.out.println(t);
-
+			System.out.printf("%s %s %d", t.getTodoId(),t.getDesc(),t.getPriority());
 		}
-		
 	}
-	
 }
