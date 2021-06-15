@@ -1,29 +1,31 @@
 package comm.example;
 
-import java.util.*;
-import java.time.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 	
-	int id;
-	String name;
-	String department;
-	int age;
-	int salary;
-	Date dateOfJoining = new Date();
-	public Employee() {
+	static int count;
+	private int id;
+	private String name;
+	public Employee(String name, String department, Date dateOfJoining, int age, int salary) {
 		super();
-	}
-	public Employee(int id, String name, String department, int age, int salary, Date dateOfJoining) {
-		super();
-		this.id = id;
+		id=++count;
 		this.name = name;
 		this.department = department;
+		this.dateOfJoining = dateOfJoining;
 		this.age = age;
 		this.salary = salary;
-		this.dateOfJoining = dateOfJoining;
+	}
+	private String department;
+	private Date dateOfJoining;
+	private int age;
+	private int salary;
+	public static int getCount() {
+		return count;
+	}
+	public static void setCount(int count) {
+		Employee.count = count;
 	}
 	public int getId() {
 		return id;
@@ -43,6 +45,12 @@ public class Employee {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
+	public Date getDateOfJoining() {
+		return dateOfJoining;
+	}
+	public void setDateOfJoining(Date dateOfJoining) {
+		this.dateOfJoining = dateOfJoining;
+	}
 	public int getAge() {
 		return age;
 	}
@@ -55,11 +63,22 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
-	public Date getDateOfJoining() {
-		return dateOfJoining;
+	@Override
+	public String toString() {
+		System.out.format("%-15s %-30s %-30s %-20s %-10s %-10s\n",id,name,department,new SimpleDateFormat("MM/dd/yyyy").format(dateOfJoining),age,salary);
+		return "";
+		
 	}
-	public void setDateOfJoining(Date dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
+	
+	public int compareTo(Employee e)
+	{
+		if(salary==e.salary)
+			return 0;
+		else if(salary>e.salary)
+			return 1;
+		else
+			return -1;
 	}
-    
+		
+	
 }

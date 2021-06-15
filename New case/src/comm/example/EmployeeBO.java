@@ -1,27 +1,13 @@
 package comm.example;
 
-import java.util.Date;
+import java.util.List;
 
-public class EmployeeBO extends Employee{
-
-	public EmployeeBO() {
-		super();
-		// TODO Auto-generated constructor stub
+public class EmployeeBO {
+	public static void printEmployees(List<Employee>employeeList)
+	{
+		System.out.format("%-15s %-30s %-30s %-20s %-10s %-10s\n","Employee ID","Name","Department","Date Of Joining","Age","Salary");
+		for(Employee e:employeeList)
+			System.out.println(e);
 	}
-
-	public EmployeeBO(int id, String name, String department, int age, int salary, Date dateOfJoining) {
-		super(id, name, department, age, salary, dateOfJoining);
-		// TODO Auto-generated constructor stub
-	}
-	
-	public static void printEmployees() {
-		
-		Employee emp = new Employee();
-		System.out.println("ID: "+emp.id+"\nName: "+emp.name+"\nDepartment: "+emp.department+"\nAge :"+emp.age+"\nSalary: "+emp.salary+"\n Date of joining:"+emp.dateOfJoining);
-	}
-	
-	
-	
-	
 
 }
