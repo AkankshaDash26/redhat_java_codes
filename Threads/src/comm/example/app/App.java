@@ -17,10 +17,10 @@ public class App {
 		System.out.println(t1.getName());
 		t1.start();
 	 */
-		PrintThread t1=new PrintThread("A");
-		t1.start();
-		PrintThread t2=new PrintThread("B");
-		t2.start();
+		new PrintThread("A");
+		//t1.start();
+		new PrintThread("B");
+		//t2.start();
 	}
 
 }
