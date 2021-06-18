@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class MyConnectionFactory {
 	
+	
 	private Connection connection;
 	private static MyConnectionFactory factory;
 	
@@ -13,6 +14,7 @@ public class MyConnectionFactory {
 	{
 		connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","root","root");
 	}
+	
 	
 	public static MyConnectionFactory createFactory() throws SQLException
 	{
@@ -27,5 +29,7 @@ public class MyConnectionFactory {
 	{
 		return connection;
 	}
+	
+	
 
 }
